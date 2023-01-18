@@ -1,0 +1,12 @@
+tree displays a file tree at the input directory
+tree [file] [-ad]
+
+    -a  displays All files
+    -d  list Directories only
+
+ex:
+tree
+tree /disk/
+tree /rom/programs/ -d
+tree -a /rom/autorun
+tree -ad
