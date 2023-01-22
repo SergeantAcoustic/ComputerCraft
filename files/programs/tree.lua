@@ -7,13 +7,13 @@ local function makeTree(dir, args)
     local root = fs.list(dir)
     --write(textutils.serialise(root))
     local tree = {}
-    for i = 1, #root do
-        local filePath = fs.combine(dir, root[i])
+	for _, fileName in ipairs(root) do
+        local filePath = fs.combine(dir, fileName)
         if not(string.sub(fs.getName(filePath), 1, 1) == "." and not(args["a"])) then 
             if fs.isDir(filePath) then
-                tree[root[i]] = makeTree(filePath, args)
+                tree[fileName] = makeTree(filePath, args)
             else
-                if not(args["d"]) then tree[root[i]] = "" end
+                if not(args["d"]) then tree[fileName] = "" end
             end
         end
     end
