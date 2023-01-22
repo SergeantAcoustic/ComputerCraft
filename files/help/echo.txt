@@ -1,0 +1,5 @@
+echo displays the entered text
+echo [text]
+
+ex:
+echo hi
