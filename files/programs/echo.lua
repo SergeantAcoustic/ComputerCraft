@@ -1,2 +1,4 @@
 local args = { ... } or {""}
-print(unpack(args))
+local out = table.concat(args, " ")
+out = string.gsub(out, "\\n", "\n")
+print(out)
